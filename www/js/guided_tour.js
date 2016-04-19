@@ -120,9 +120,9 @@ var tour = new Tour({
 	placement: 'left'
   },
       {
-    element: "#ctrl_download",
-    title: "Export tools",
-    content: "Click on this button to download data. <br /><br /> You can chose among point, box or complete map download. Then, you will be able to export the data in several formats: KML, GeoTIFF, JPG, CSV, XLSX and Shapefile.<br /><br />Download is limited to a maximum of 500000 rows per request, the equivalent of about 7 months of a single variable for the whole world.",
+    element: "#ctrl_station_ctrl",
+    title: "Number of stations tool",
+    content: "Click on this icon to get the station count for a grid cell (only CRU data). The station count is the monthly number of stations that lie within correlation decay distance of that grid cell. It provides a mesure of the quality of the interpolation.",
 	animation: true,
 	placement: 'left'
   },
@@ -131,14 +131,21 @@ var tour = new Tour({
     title: "Animation tool",
     content: "Click here to launch the animation window",
 	animation: true,
-	placement: 'right'
+	placement: 'bottom'
   },
       {
-    element: "#ctrl_change_viewer",
-    title: "Change projection",
-    content: "The map displays by default in Web Mercator projection. Click on the small map to launch the viewer in Plate Carrée projection. You will see the approximate scale at the bottom.",
+    element: "#ctrl_download",
+    title: "Export tools",
+    content: "Click on this button to download data. <br /><br /> You can chose among point, box or complete map download. Then, you will be able to export the data in several formats: KML, GeoTIFF, JPG, CSV, XLSX and Shapefile.<br /><br />Download is limited to a maximum of 500000 rows per request, the equivalent of about 7 months of a single variable for the whole world.",
 	animation: true,
-	placement: 'left'
+	placement: 'bottom'
+  },
+      {
+    element: "#ctrl_chart",
+    title: "Temperature graphs",
+    content: "Here you will be asked to choose between several temperature graph options. Then, you can click on the map to draw the graph. You can also compare two graphs from different locations.",
+	animation: true,
+	placement: 'bottom'
   }
 ],
   storage: false
