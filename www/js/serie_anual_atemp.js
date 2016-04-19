@@ -1,11 +1,11 @@
 function drawSerieAnualAtemp(container,point){
-var serie_t,tmpArray = new Array(115),agnoArray = new Array(115);
+var serie_t,tmpArray = new Array(112),agnoArray = new Array(112);
 var lonlat = new OpenLayers.LonLat(point.lon,point.lat);//	var lonlat = map.getLonLatFromViewPortPx(e.xy).transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
 var lonlatD = lonlat.transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
 var lon = Math.round(lonlat.lon);
 var lat = Math.round(lonlat.lat);
 // var getTmp = $.getJSON('/geoserver/gcm/wfs?service=wfs&version=1.0.0&SRS=EPSG:900913&request=GetFeature&typeNames=gcm:anomalias_temp_anual_espacial&CQL_FILTER=BBOX%28geom,-667674,4492867,-656820,4501581%29&WIDTH=1024&HEIGHT=672&outputFormat=json', function(serie_t) {
-	var getTmp = $.getJSON('/geoserver/gcm/wfs?service=wfs&version=1.0.0&SRS=EPSG:900913&request=GetFeature&typeNames=gcm:anomalias_temp_anual_espacial&CQL_FILTER=BBOX%28geom,'+point.lon+','+point.lat+','+point.lon+','+point.lat+'%29&WIDTH=1024&HEIGHT=672&outputFormat=json', function(serie_t) {
+	var getTmp = $.getJSON('/geoserver/gcm/wfs?service=wfs&version=1.0.0&SRS=EPSG:900913&request=GetFeature&typeNames=gcm:anomalias_temp_anual_espacial&CQL_FILTER=BBOX%28geom,'+point.lon+','+point.lat+','+point.lon+','+point.lat+'%29AND%28agno%3C2013%29&WIDTH=1024&HEIGHT=672&outputFormat=json', function(serie_t) {
        
 				$.each(serie_t.features, function (key, val) {
 				  properties = val.properties;
